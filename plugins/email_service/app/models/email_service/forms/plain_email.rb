@@ -13,7 +13,7 @@ module EmailService
     attribute :source_email, String
     attribute :source_domain, String
     attribute :source_domain_name_part, String
-    
+
     attribute :to_addr, String
     attribute :cc_addr, String
     attribute :bcc_addr, String
@@ -23,6 +23,7 @@ module EmailService
     attribute :subject, String
     attribute :html_body, String
     attribute :text_body, String
+    attribute :configuration_set_name, String
 
     strip_attributes
 
@@ -45,7 +46,7 @@ module EmailService
     def process(plain_email_instance)
       process!(plain_email_instance)
     end
-    
+
     private
 
     def process!(plain_email_instance)
@@ -59,6 +60,7 @@ module EmailService
         messages = plain_email.errors.blank? ? {} : plain_email.errors
         assign_errors(messages)
       end
+      
       plain_email
     end
 

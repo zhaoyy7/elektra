@@ -20,7 +20,7 @@
         %br
         %h3 EC2 Credentials
         .toolbar
-          .main-buttons 
+          .main-buttons
           - if ec2_creds_collection && ec2_creds_collection.size > 1
             = link_to "Manage EC2 Credentials", plugin('email_service').ec2_credentials_path, class: 'btn btn-primary'
         %br
@@ -33,4 +33,3 @@
             and you can find How-To guides
             = link_to "here", "https://documentation.global.cloud.sap/services/email-howto", :target => "_blank"
             \.
-
